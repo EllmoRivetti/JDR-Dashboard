@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+   <center>
+      <JFXTabPane BorderPane.alignment="CENTER">
+         <tabs>
+            <Tab text="Main informations">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <GridPane hgap="30.0" prefHeight="683.0" prefWidth="1280.0" vgap="30.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints maxHeight="100.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="100.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <GridPane>
+                                <columnConstraints>
+                                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="315.0" minWidth="10.0" prefWidth="207.0" />
+                                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="449.0" minWidth="10.0" prefWidth="433.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="234.0" text="Gold :">
+                                       <font>
+                                          <Font size="56.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="goldAmount" alignment="CENTER_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="0" GridPane.columnIndex="1">
+                                       <font>
+                                          <Font size="56.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </GridPane>
+                              <GridPane hgap="10.0" GridPane.columnIndex="1">
+                                <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="100.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="100.0" minWidth="-Infinity" prefWidth="80.0" />
+                                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="100.0" minWidth="-Infinity" prefWidth="80.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <JFXTextField fx:id="goldOp" focusColor="#e0c438" prefWidth="125.0" />
+                                    <JFXButton onAction="#addGold" prefHeight="40.0" prefWidth="100.0" ripplerFill="#069e43" style="-fx-background-color: e0e0e0;" text="Add" GridPane.columnIndex="1" />
+                                    <JFXButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#removeGold" prefHeight="40.0" prefWidth="100.0" ripplerFill="#b92200" style="-fx-background-color: e0e0e0;" text="Substract" GridPane.columnIndex="2" />
+                                 </children>
+                                 <padding>
+                                    <Insets right="10.0" />
+                                 </padding>
+                              </GridPane>
+                              <BarChart fx:id="reputation" categoryGap="4.0" title="Reputation" GridPane.rowIndex="2">
+                                <xAxis>
+                                  <CategoryAxis label="Factions" side="BOTTOM" tickLabelGap="2.0" tickLength="1.0" fx:id="x" />
+                                </xAxis>
+                                <yAxis>
+                                  <NumberAxis fx:id="y" label="Reputation" side="LEFT" upperBound="90.0" />
+                                </yAxis>
+                              </BarChart>
+                              <GridPane GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <GridPane>
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="92.0" prefWidth="128.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="165.0" minWidth="50.0" prefWidth="133.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="219.0" minWidth="10.0" prefWidth="52.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                          <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Label alignment="TOP_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="110.0" text="Add new faction :">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER" contentDisplay="RIGHT" prefHeight="21.0" prefWidth="147.0" text="Name :   " textAlignment="RIGHT" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <JFXTextField fx:id="newFactName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <Label prefHeight="21.0" prefWidth="95.0" text="Reputation :" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <JFXTextField fx:id="newFactRep" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <JFXButton onAction="#addNewfac" ripplerFill="#069e43" style="-fx-background-color: e0e0e0;" text="Add" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </GridPane>
+                              <GridPane GridPane.rowIndex="1">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="308.0" minWidth="10.0" prefWidth="203.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="557.0" minWidth="10.0" prefWidth="422.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label text="Calendar : ">
+                                       <font>
+                                          <Font size="40.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="calendarLabel" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Morndas 1 de Sombreciel 4E203" GridPane.columnIndex="1">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </GridPane>
+                              <GridPane GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                <columnConstraints>
+                                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <JFXButton onAction="#nextDay" prefHeight="40.0" prefWidth="100.0" ripplerFill="#4599ff" style="-fx-background-color: e0e0e0;" text="Next Day" />
+                                    <JFXButton onAction="#nextWeek" prefHeight="40.0" prefWidth="100.0" ripplerFill="#4599ff" style="-fx-background-color: e0e0e0;" text="Next Week" GridPane.columnIndex="1" />
+                                    <JFXButton onAction="#nextMonth" prefHeight="40.0" prefWidth="100.0" ripplerFill="#4599ff" style="-fx-background-color: e0e0e0;" text="Next Month" GridPane.columnIndex="2" />
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Players">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+         </tabs>
+      </JFXTabPane>
+   </center>
+</BorderPane>
